@@ -1,13 +1,4 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/.local/bin:$PATH
-export PS_SNOW_PW=servicen0w123!
-export RB_SNOW_PW=rambus123
-export AU_SNOW_PW=PD$N!g@QCIs8
-export MEDALLIA_SNOW_PW=BannerMedalia17$
-export NUTANIX_SNOW_PW=Nutanix@2017
-export FFN_SNOW_PW=Fr33domM0ve!
-export CL_SNOW_PW=Clorox#1
-export BC=Broadc@m123
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/dzliu/.oh-my-zsh
 export KMS=arn:aws:kms:us-east-1:922531023312:key/c1a7e790-53d4-40c7-984c-35d4e2806312
