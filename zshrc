@@ -1,13 +1,25 @@
 # If you come from bash you might have to change your $PATH.
+export PATH=$HOME/bin:/usr/.local/bin:$PATH
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+export PS_SNOW_PW=servicen0w123!
+export RB_SNOW_PW=rambus123
+export AU_SNOW_PW=PD$N!g@QCIs8
+export MEDALLIA_SNOW_PW=BannerMedalia17$
+export NUTANIX_SNOW_PW=Nutanix@2017
+export FFN_SNOW_PW=Fr33domM0ve!
+export CL_SNOW_PW=Clorox#1
+export EQ_SNOW_PW="gJIH$yC!*qSzoUbc7yGL"
+export EQ_SNOW_PW_DEV=qk!CroZ0ixmhEfv7zGmAPrtF0
+export BC=Broadc@m123
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/dzliu/.oh-my-zsh
 export KMS=arn:aws:kms:us-east-1:922531023312:key/c1a7e790-53d4-40c7-984c-35d4e2806312
-export PYTHONPATH=/Users/dzliu/moveworks/moveworks
-export GOOGLE_APPLICATION_CREDENTIALS="/Users/$USER/Downloads/Spanish Translation Project-2079c1288efc.json"
 export PATH=/anaconda3/bin:$PATH
-alias vv="source /Users/$USER/moveworks/venv/moveworks/bin/activate"
+alias vv="source /Users/$USER/shipping/venv/shipping/bin/activate"
+export PYTHONPATH=/Users/dzliu/shipping/
+export DYLD_FALLBACK_LIBRARY_PATH='/usr/bin/libtool'
 function gfu() {
-    cd /Users/dzliu/moveworks/moveworks
+    cd /Users/dzliu/shipping/rio
     git co master
     git fetch upstream
     git rebase upstream/master
@@ -19,6 +31,9 @@ function bcb() {
     vv  # i have a alias to activate virtual env using "vv"
     bazel clean --expunge
     bazel build //...
+}
+function aws(){
+    ssh -i ~/shipping/access_keys/dogpatch_server_key_pair.pem ec2-user@ec2-54-153-45-228.us-west-1.compute.amazonaws.com
 }
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -118,3 +133,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 set -o vi
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/dzliu/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/dzliu/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/dzliu/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/dzliu/google-cloud-sdk/completion.zsh.inc'; fi

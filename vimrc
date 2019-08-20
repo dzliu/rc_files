@@ -1,12 +1,29 @@
 set nocompatible              " required
 filetype off                  " required
 
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " alternatively, pass a path where Vundle should install plugins
 " call vundle#begin('~/some/path/here')
+
+"javascript synatx
+Plugin 'pangloss/vim-javascript'
+Plugin 'maksimr/vim-jsbeautify'
+
+"super tab
+Plugin 'ervandew/supertab'
+
+"auto-complete
+Bundle 'Valloric/YouCompleteMe'
+
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
 
 "let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
@@ -19,8 +36,7 @@ Plugin 'tmhedberg/SimpylFold'
 "auto indent after fuction defintion 
 Plugin 'vim-scripts/indentpython.vim'
 
-"auto-complete
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'Chiel92/vim-autoformat'
 
 "syntax checking
 Plugin 'scrooloose/syntastic'
@@ -46,7 +62,6 @@ Plugin 'mindriot101/vim-yapf'
 "powerline
 Plugin 'Lokaltog/powerline'
 
-Plugin 'pangloss/vim-javascript'
 
 Plugin 'mileszs/ack.vim'
 
@@ -83,10 +98,6 @@ nnoremap <space> za
 "UTF8 support
 set encoding=utf-8
 
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2 |
 
 "Flagging Unnecessary Whitespace
 highlight BadWhitespace ctermbg=red guibg=yellow
@@ -572,8 +583,8 @@ endif
 "when you hit tab, ensure your line length doesn’t go beyond 80 characters,
 "and store the file in a unix format so you don’t get a bunch of conversion
 "issues when checking into GitHub and/or sharing with other users.
-    
 autocmd BufWrite *.py : Yapf --style='{based_on_style: google, column_limit = 100}'
+autocmd BufWrite *.js :Autoformat    
 
 
 " let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
@@ -582,3 +593,41 @@ nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 let g:ackprg = 'ag --nogroup --nocolor --column'
 let g:ackprg = 'ag --vimgrep'
 set scrolloff=10
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+map <c-f> :call JsBeautify()<cr>
+" or
+autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
+" for json
+autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+" for jsx
+autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+" for html
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+
+autocmd FileType javascript vnoremap <buffer>  <c-f> :call RangeJsBeautify()<cr>
+autocmd FileType json vnoremap <buffer> <c-f> :call RangeJsonBeautify()<cr>
+autocmd FileType jsx vnoremap <buffer> <c-f> :call RangeJsxBeautify()<cr>
+autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
+autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
