@@ -1,4 +1,5 @@
 # If you come from bash you might have to change your $PATH.
+alias vv="source /Users/$USER/shipping/venv/shipping/bin/activate"
 export PATH=$HOME/bin:/usr/.local/bin:$PATH
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 export PS_SNOW_PW=servicen0w123!
@@ -14,8 +15,6 @@ export BC=Broadc@m123
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/dzliu/.oh-my-zsh
 export KMS=arn:aws:kms:us-east-1:922531023312:key/c1a7e790-53d4-40c7-984c-35d4e2806312
-export PATH=/anaconda3/bin:$PATH
-alias vv="source /Users/$USER/shipping/venv/shipping/bin/activate"
 export PYTHONPATH=/Users/dzliu/shipping/
 export DYLD_FALLBACK_LIBRARY_PATH='/usr/bin/libtool'
 function gfu() {
@@ -32,8 +31,11 @@ function bcb() {
     bazel clean --expunge
     bazel build //...
 }
-function aws(){
+function awss(){
     ssh -i ~/shipping/access_keys/dogpatch_server_key_pair.pem ec2-user@ec2-54-153-45-228.us-west-1.compute.amazonaws.com
+}
+function awsl(){
+    ssh -i ~/shipping/access_keys/dogpatch_server_key_pair.pem ec2-user@ec2-54-67-33-65.us-west-1.compute.amazonaws.com
 }
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
