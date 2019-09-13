@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-alias vv="source /Users/$USER/shipping/venv/shipping/bin/activate"
+alias vv="source $HOME/shipping/bin/activate"
 export PATH=$HOME/bin:/usr/.local/bin:$PATH
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 export PS_SNOW_PW=servicen0w123!
@@ -13,9 +13,9 @@ export EQ_SNOW_PW="gJIH$yC!*qSzoUbc7yGL"
 export EQ_SNOW_PW_DEV=qk!CroZ0ixmhEfv7zGmAPrtF0
 export BC=Broadc@m123
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/dzliu/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
+export PYTHONPATH=$HOME
 export KMS=arn:aws:kms:us-east-1:922531023312:key/c1a7e790-53d4-40c7-984c-35d4e2806312
-export PYTHONPATH=/Users/dzliu/shipping/
 export DYLD_FALLBACK_LIBRARY_PATH='/usr/bin/libtool'
 function gfu() {
     cd /Users/dzliu/shipping/rio
