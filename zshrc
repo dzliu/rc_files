@@ -14,9 +14,10 @@ export EQ_SNOW_PW_DEV=qk!CroZ0ixmhEfv7zGmAPrtF0
 export BC=Broadc@m123
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export PYTHONPATH=$HOME
+export PYTHONPATH=$HOME/shipping/
 export KMS=arn:aws:kms:us-east-1:922531023312:key/c1a7e790-53d4-40c7-984c-35d4e2806312
 export DYLD_FALLBACK_LIBRARY_PATH='/usr/bin/libtool'
+export DYLD_FALLBACK_LIBRARY_PATH=$HOME/lib:/usr/local/lib:/lib:/usr/lib
 function gfu() {
     cd /Users/dzliu/shipping/rio
     git co master
@@ -43,6 +44,7 @@ function awsl(){
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="Cobalt2"
 ZSH_THEME="candy"
+#ZSH_THEME="candy-kingdom"
 #ZSH_THEME="avit"
 
 

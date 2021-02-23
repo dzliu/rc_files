@@ -140,10 +140,15 @@ autocmd BufEnter *.py colorscheme Tomorrow-Night-Bright
 "autocmd BufEnter * colorscheme Feral 
 "autocmd BufEnter *.html colorscheme Feral   
 "autocmd BufEnter *.py colorscheme Feral 
-hi CursorLine term=bold cterm=bold guibg=Grey40
-hi CursorLine gui=none
-set cursorline
+set cursorline 
+"hi CursorLine ctermbg=LightBlue
+hi  cursorline cterm=bold ctermbg=LightBlue
+"hi LineNr cterm=bold
+hi CursorLine cterm=bold
+"hi CursorLine gui=none
 "set relativenumber " show line numbers, relative
+"hi CursorLineNr    term=bold cterm=bold ctermfg=012 gui=bold
+
 set cursorcolumn " highlight current col
 set hlsearch " search highligt
 
@@ -631,3 +636,4 @@ autocmd FileType json vnoremap <buffer> <c-f> :call RangeJsonBeautify()<cr>
 autocmd FileType jsx vnoremap <buffer> <c-f> :call RangeJsxBeautify()<cr>
 autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
 autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
+
