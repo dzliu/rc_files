@@ -9,6 +9,8 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 " call vundle#begin('~/some/path/here')
 
+
+
 "javascript synatx
 Plugin 'pangloss/vim-javascript'
 Plugin 'maksimr/vim-jsbeautify'
@@ -17,10 +19,8 @@ Plugin 'maksimr/vim-jsbeautify'
 Plugin 'ervandew/supertab'
 
 "auto-complete
-Bundle 'Valloric/YouCompleteMe'
 
 " Track the engine.
-Plugin 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
@@ -454,8 +454,8 @@ func! DeleteTrailingWS()
  %s/\s\+$//ge
  exe "normal `z"
 endfunc
-autocmd BufWrite *.py :call DeleteTrailingWS()
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
+
+
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -637,3 +637,11 @@ autocmd FileType jsx vnoremap <buffer> <c-f> :call RangeJsxBeautify()<cr>
 autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
 autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
 
+set clipboard=unnamed
+
+
+"call plug#begin('~/.vim/plugged')
+
+"Plug 'psf/black', { 'branch': 'main' }
+
+"call plug#end()
