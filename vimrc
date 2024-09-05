@@ -636,4 +636,10 @@ autocmd FileType json vnoremap <buffer> <c-f> :call RangeJsonBeautify()<cr>
 autocmd FileType jsx vnoremap <buffer> <c-f> :call RangeJsxBeautify()<cr>
 autocmd FileType html vnoremap <buffer> <c-f> :call RangeHtmlBeautify()<cr>
 autocmd FileType css vnoremap <buffer> <c-f> :call RangeCSSBeautify()<cr>
+set clipboard=unnamed
 
+"call plug#begin('~/.vim/plugged')
+
+"Plug 'psf/black', { 'branch': 'main' }
+
+"call plug#end()
