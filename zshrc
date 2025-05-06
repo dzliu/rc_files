@@ -1,3 +1,6 @@
+export PATH="/opt/homebrew/opt/vim/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+
 # If you come from bash you might have to change your $PATH.
 alias vv="source $HOME/shipping/bin/activate"
 export PATH=$HOME/bin:/usr/.local/bin:$PATH
