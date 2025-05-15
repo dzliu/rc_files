@@ -146,3 +146,5 @@ if [ -f '/Users/dzliu/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/dzliu/goo
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/dzliu/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/dzliu/google-cloud-sdk/completion.zsh.inc'; fi
+. "$HOME/.cargo/env"
+source ~/miniconda3/etc/profile.d/conda.sh
